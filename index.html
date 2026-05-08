@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atmos - your intelligent weather dashboard!</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1 class="atmos">ATMOS</h1>
+        <svg
+          class="w-6 h-6 text-gray-800 dark:text-white toggle"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <div class="hero">
+        <div class="hero-text">
+          <h1 class="hero-heading">ATMOS</h1>
+          <h3 class="hero-subtitle">Your intelligent weather dashboard.</h3>
+        </div>
+        <div class="globe"></div>
+      </div>
+
+      <div class="search-container">
+        <input class="city-input" placeholder="Search for a city" />
+        <div class="suggestions-dropdown"></div>
+      </div>
+
+      <div class="city-cards"></div>
+    </div>
+    <div class="hourly-container">
+      <div class="notice">
+        Enter a city name to explore today's hourly breakdown and a full 7-day
+        forecast. A sample of London, England has been shown.
+      </div>
+      <div class="hourly-top">
+        <div class="forecast-search-container">
+          <input class="forecast-input" placeholder="Search for a city" />
+          <div class="forecast-suggestions-dropdown"></div>
+        </div>
+        <h1 class="forecast-text hidden">HOURLY FORECAST</h1>
+      </div>
+      <div class="hourly-main hidden">
+        <div class="chart-row">
+          <div class="chart-card">
+            <canvas class="hourly-temp-chart" width="400" height="200"></canvas>
+          </div>
+          <div class="chart-card">
+            <canvas
+              class="hourly-precipitation-chart"
+              width="400"
+              height="200"
+            ></canvas>
+          </div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-card">
+            <canvas
+              class="hourly-humidity-chart"
+              width="400"
+              height="200"
+            ></canvas>
+          </div>
+          <div class="chart-card">
+            <canvas
+              class="hourly-pressure-chart"
+              width="400"
+              height="200"
+            ></canvas>
+          </div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-card">
+            <canvas class="hourly-uv-chart" width="400" height="200"></canvas>
+          </div>
+          <div class="chart-card">
+            <canvas
+              class="hourly-wind-speed-chart"
+              width="400"
+              height="200"
+            ></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="daily-container">
+        <h1 class="daily-forecast-text hidden">7 DAY FORECAST</h1>
+        <div class="daily-main hidden">
+          <div class="chart-row">
+            <div class="chart-card">
+              <canvas
+                class="daily-precipitation-chart"
+                width="400"
+                height="200"
+              ></canvas>
+            </div>
+            <div class="chart-card">
+              <canvas
+                class="daily-temp-max-chart"
+                width="400"
+                height="200"
+              ></canvas>
+            </div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-card">
+              <canvas
+                class="daily-temp-min-chart"
+                width="400"
+                height="200"
+              ></canvas>
+            </div>
+            <div class="chart-card">
+              <canvas
+                class="daily-sunshine-duration"
+                width="400"
+                height="200"
+              ></canvas>
+            </div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-card">
+              <canvas class="daily-uv-chart" width="400" height="200"></canvas>
+            </div>
+            <div class="chart-card">
+              <canvas
+                class="daily-wind-speed-chart"
+                width="400"
+                height="200"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="weather-map-container">
+      <h1 class="weather-map-heading">WEATHER MAP</h1>
+      <div id="weather-map"></div>
+    </div>
+    <div class="footer">
+      <p>© 2026 Atmos - Created by Sarthak Rohilla. All rights reserved.</p>
+    </div>
+    <div class="popup hidden">
+      <div class="popup-content">
+        <span class="popup-alert">🚨 ALERT</span>
+        <p class="popup-message">You cannot add more than 8 cities</p>
+        <button class="popup-close">❌</button>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/fcbd85396f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="config.js"></script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
