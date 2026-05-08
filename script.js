@@ -110,7 +110,7 @@ function init() {
 
 async function fetchSuggestionAPI(inputValue) {
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${API_KEY}`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${API_KEY}`,
   );
   const data = await response.json();
 
@@ -321,7 +321,7 @@ if (cityCards.children.length === 0) {
 
 async function fetchSuggestionAPIForHourly(inputValue) {
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${API_KEY}`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${API_KEY}`,
   );
   const data = await response.json();
   data.forEach((el) => {
