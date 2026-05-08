@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const toggleButton = document.querySelector(".toggle");
 const body = document.querySelector("body");
 const testButton = document.querySelector(".test-button");
+const API_KEY = "4eade230278c11e0506daa8347945be6";
 const hourlyMain = document.querySelector(".hourly-main");
 const cityInput = document.querySelector(".city-input");
 const suggestionsDropdown = document.querySelector(".suggestions-dropdown");
@@ -109,7 +110,7 @@ function init() {
 
 async function fetchSuggestionAPI(inputValue) {
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${CONFIG.API_KEY}`,
+    `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${API_KEY}`,
   );
   const data = await response.json();
 
@@ -137,7 +138,7 @@ function renderSuggestion(city, country, lat, lon) {
 
 async function fetchWeatherAPI(lat, lon) {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${CONFIG.API_KEY}&units=metric`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`,
   );
   const data = await response.json();
 
@@ -320,7 +321,7 @@ if (cityCards.children.length === 0) {
 
 async function fetchSuggestionAPIForHourly(inputValue) {
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${CONFIG.API_KEY}`,
+    `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=3&appid=${API_KEY}`,
   );
   const data = await response.json();
   data.forEach((el) => {
@@ -622,7 +623,7 @@ function weatherMap() {
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
   L.tileLayer(
-    `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${CONFIG.API_KEY}`,
+    `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${API_KEY}`,
   ).addTo(map);
 }
 
