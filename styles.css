@@ -225,6 +225,7 @@ body {
 .suggestions-dropdown {
   display: flex;
   flex-direction: column;
+  z-index: 2000;
   gap: 1rem;
 }
 
