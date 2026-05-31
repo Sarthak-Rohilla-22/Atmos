@@ -34,7 +34,7 @@ https://sarthak-rohilla-22.github.io/Atmos/
     </ol>
   </li>
   <li>Limits the number of weather cards to 8. Attempting to add more displays an alert popup.</li>
-  <li>Uses Local Storage to save weather cards and theme preferences between sessions</li>
+  <li>Automatically saves weather cards and theme preferences using Local Storage.</li>
   <li>Detailed hourly forecast visualized through charts, including:
     <ol>
       <li>Temperature (°C)</li>
@@ -56,7 +56,6 @@ https://sarthak-rohilla-22.github.io/Atmos/
     </ol>
   </li>
   <li>Interactive world weather map with live precipitation overlays.</li>
-  <li>Automatically saves weather cards and theme preferences using Local Storage.</li>
 </ul>
 
 ## Libraries Used
