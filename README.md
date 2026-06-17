@@ -1,6 +1,6 @@
 # ATMOS
 
-Atmos is a weather dashboard built using HTML, CSS, and Vanilla JavaScript. The primary goal of this project was to refresh my JavaScript skills after taking a long break from web development during my 11th and 12th grades.
+Atmos is a weather dashboard built using HTML, CSS, and Vanilla JavaScript.
 
 The biggest learning from this project was working with multiple APIs and integrating them into a single application.
 
