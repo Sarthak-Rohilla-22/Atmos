@@ -16,21 +16,16 @@ const popupClose = document.querySelector(".popup-close");
 const globe = document.querySelector(".globe");
 const hourlyTempCanvas = document.querySelector(".hourly-temp-chart");
 const hourlyTempCtx = hourlyTempCanvas.getContext("2d");
-
 const hourlyPrecipitationCanvas = document.querySelector(
   ".hourly-precipitation-chart",
 );
 const hourlyPrecipitationCtx = hourlyPrecipitationCanvas.getContext("2d");
-
 const hourlyHumidityCanvas = document.querySelector(".hourly-humidity-chart");
 const hourlyHumidityCtx = hourlyHumidityCanvas.getContext("2d");
-
 const hourlyPressureCanvas = document.querySelector(".hourly-pressure-chart");
 const hourlyPressureCtx = hourlyPressureCanvas.getContext("2d");
-
 const hourlyUVCanvas = document.querySelector(".hourly-uv-chart");
 const hourlyUVCtx = hourlyUVCanvas.getContext("2d");
-
 const hourlyWindSpeedCanvas = document.querySelector(
   ".hourly-wind-speed-chart",
 );
@@ -79,9 +74,16 @@ function init() {
     )
     .backgroundColor("rgba(0,0,0,0)");
 
-  // Auto-rotate
-  world.controls().autoRotate = true;
-  world.controls().autoRotateSpeed = 0.35;
+  const controls = world.controls();
+
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 2;
+
+  controls.enableRotate = false;
+  controls.enableZoom = false;
+  controls.enablePan = false;
+
+  world.renderer().domElement.style.pointerEvents = "none";
 
   // Add clouds sphere
   const CLOUDS_IMG_URL = "./clouds.png"; // from https://github.com/turban/webgl-earth
