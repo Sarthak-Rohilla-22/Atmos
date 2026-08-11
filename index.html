@@ -11,6 +11,10 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close"
+    />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body>
@@ -167,9 +171,15 @@
     </div>
     <div class="popup hidden">
       <div class="popup-content">
-        <span class="popup-alert">🚨 ALERT</span>
-        <p class="popup-message">You cannot add more than 8 cities</p>
-        <button class="popup-close">❌</button>
+        <span class="popup-alert">
+          <h1>ALERT</h1>
+        </span>
+        <h3 class="popup-message">You cannot add more than 8 cities</h3>
+        <button class="popup-close">
+          <span class="material-symbols-outlined" style="color: #ef4444">
+            close
+          </span>
+        </button>
       </div>
     </div>
 

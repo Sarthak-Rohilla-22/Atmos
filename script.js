@@ -85,10 +85,9 @@ function init() {
 
   world.renderer().domElement.style.pointerEvents = "none";
 
-  // Add clouds sphere
-  const CLOUDS_IMG_URL = "./clouds.png"; // from https://github.com/turban/webgl-earth
+  const CLOUDS_IMG_URL = "./clouds.png";
   const CLOUDS_ALT = 0.004;
-  const CLOUDS_ROTATION_SPEED = -0.006; // deg/frame
+  const CLOUDS_ROTATION_SPEED = -0.006;
 
   new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
     const clouds = new THREE.Mesh(
@@ -230,8 +229,11 @@ function renderWeatherCard(data) {
   cityLocation.textContent = `${data.name}, ${data.country}`;
   top.appendChild(cityLocation);
 
-  const closeBtn = document.createElement("h1");
-  closeBtn.textContent = "❌";
+  const closeBtn = document.createElement("span");
+  closeBtn.className = "material-symbols-outlined";
+  closeBtn.style.cursor = "pointer";
+  closeBtn.style.color = "#ef4444";
+  closeBtn.textContent = "close";
   top.appendChild(closeBtn);
 
   const middle = document.createElement("div");
