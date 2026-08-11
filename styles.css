@@ -6,7 +6,7 @@
   --text-primary: #c5dbf1;
   --text-secondary: #94a3b8;
   --accent: #38bdf8;
-  --border: #1e293b;
+  --border: #c5dbf1;
   --card-border: #1e293b;
 }
 
@@ -16,8 +16,7 @@
   --text-primary: #050361;
   --text-secondary: #475569;
   --accent: #0284c7;
-
-  --border: #cbd5e1;
+  --border: #050361;
   --card-border: #cbd5e1;
 }
 
@@ -27,6 +26,7 @@
   box-sizing: border-box;
   outline: none;
   text-decoration: none;
+  border-radius: 0 !important;
 }
 
 html {
@@ -124,7 +124,7 @@ body h1.hero-heading {
   align-self: center;
   padding: 0 2rem;
   border: 0.2rem solid var(--card-border);
-  border-radius: 0.6rem;
+  border-radius: 0;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-size: 1.6rem;
@@ -187,7 +187,7 @@ body h1.hero-heading {
 
 .city-card {
   background-color: var(--bg-secondary);
-  border-radius: 2rem;
+  border-radius: 0;
   padding: 1.8rem;
   border: 0.2rem solid var(--card-border);
   display: flex;
@@ -220,7 +220,7 @@ body h1.hero-heading {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 0;
   margin: 0;
   color: var(--text-secondary);
 }
@@ -426,7 +426,7 @@ hr {
 
 .chart-card {
   background-color: var(--bg-secondary);
-  border-radius: 1.6rem;
+  border-radius: 0;
   padding: 1.5rem;
   border: 0.2rem solid var(--card-border);
   width: 100%;
@@ -464,9 +464,9 @@ hr {
   color: var(--text-primary);
   padding: 1.2rem 2rem;
   margin: 2rem auto 0;
-  width: 80%;
+  width: 81%;
   border: 0.2rem solid var(--card-border);
-  border-radius: 0.8rem;
+  border-radius: 0;
   background-color: var(--bg-secondary);
 }
 
@@ -486,7 +486,7 @@ hr {
 #weather-map {
   width: 90vw;
   height: 500px;
-  border-radius: 1.6rem;
+  border-radius: 0;
   border: 0.2rem solid var(--card-border);
   overflow: hidden;
 }
