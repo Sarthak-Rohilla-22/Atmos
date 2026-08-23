@@ -7,14 +7,6 @@ The biggest learning from this project was working with multiple APIs and integr
 ## Check it out live!
 https://sarthak-rohilla-22.github.io/Atmos/
 
-## Screenshots
-<img width="1453" height="831" alt="image" src="https://github.com/user-attachments/assets/3f8cbb60-554c-4415-b256-50ad7a8457e4" />
-<img width="1453" height="827" alt="image" src="https://github.com/user-attachments/assets/2620426b-35cf-4ec3-9d8a-45db450f67b3" />
-<img width="1453" height="827" alt="image" src="https://github.com/user-attachments/assets/bf0f9edb-66a7-480c-9897-54d75b0f197c" />
-<img width="1453" height="679" alt="image" src="https://github.com/user-attachments/assets/fa706c2f-9bff-4e98-9bc3-cadd30f23c61" />
-<img width="1453" height="831" alt="image" src="https://github.com/user-attachments/assets/bc77d4cf-1a8d-4690-95c3-36cb0d9e9d41" />
-<img width="1453" height="831" alt="image" src="https://github.com/user-attachments/assets/9fa01e45-57e5-413d-ab71-dcfcab86685e" />
-
 
 ## Feature List
 
